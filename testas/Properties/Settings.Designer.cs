@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace vpam.Properties
+namespace testas.Properties
 {
 
 
