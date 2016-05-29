@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="VPAM.setPORT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VPAM"
+             mc:Ignorable="d"  Name="SetPORT"
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+        <Rectangle Fill="#FF0D8DBD" Stroke="Black" RenderTransformOrigin="0.5,0.5" RadiusY="14.5" RadiusX="14.5" Margin="0,0,0,1"/>
+        <Grid Margin="-0.5,-1,0.5,1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="14*"/>
+                <ColumnDefinition Width="11*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57*"/>
+                <RowDefinition Height="43*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="etikete" Content="......" Margin="0,7,10,25" Background="#FF0E0000" Foreground="#FFBFF702" HorizontalAlignment="Right" Width="80" RenderTransformOrigin="0.473,0.2" Grid.ColumnSpan="2">
+            </Label>
+            <RadioButton x:Name="SWITCH" Content="Keisti" HorizontalAlignment="Left" Margin="2,8,0,20" Width="16" RenderTransformOrigin="0.333,0.483" Grid.Row="1"/>
+            <RadioButton x:Name="OFF" Content="OFF" HorizontalAlignment="Left" Margin="2,0,0,7" Width="16" RenderTransformOrigin="0.333,0.463" Height="15" VerticalAlignment="Bottom" IsChecked="True"/>
+            <TextBlock x:Name="textBlock2" TextWrapping="Wrap" Height="17" VerticalAlignment="Bottom" Margin="17,0,43,7" Text="Išjungti" RenderTransformOrigin="0.56,0.406" FontSize="10.667" Grid.ColumnSpan="2"/>
+            <TextBlock x:Name="textBlock_Copy4" Margin="18,47,2.125,35" TextWrapping="Wrap" Text="Įjungti" FontSize="10.667" Grid.RowSpan="2"/>
+            <TextBlock x:Name="textBlock2_Copy" TextWrapping="Wrap" Height="29" VerticalAlignment="Bottom" Margin="0,0,0,38" RenderTransformOrigin="0.56,0.406" FontSize="10.667" HorizontalAlignment="Right" Width="40" Grid.RowSpan="2" Grid.Column="1"><Run Text="    "/><Run Text="šią"/><LineBreak/><Run Text="  "/><Run Text="j"/><Run Text="ungt"/><Run Text="į"/><Run Text=":"/></TextBlock>
+            <ComboBox x:Name="JungtysCombox" Margin="0,8,8,0" DisplayMemberPath="Pavadinimas" HorizontalAlignment="Right" Height="12" VerticalAlignment="Top" Width="32" Grid.Row="1"  SelectedValuePath="Content" SelectionChanged="JungtysCombox_SelectionChanged" Grid.Column="1">
+
+            </ComboBox>
+            <Button x:Name="Patvirtinti" Content="Papildyti" Margin="13,0,0,3" Grid.Row="1" Click="Patvirtinti_Click" Height="17" VerticalAlignment="Bottom" FontSize="8" HorizontalAlignment="Left" Width="34" RenderTransformOrigin="0.5,0.517"/>
+            <Button x:Name="Undo" Content="Atšaukti" Margin="0,0,13,3" Grid.Row="1" Click="Undo_Click" FontSize="8" HorizontalAlignment="Right" Width="38" Height="17" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+            <RadioButton x:Name="ON" Content="ON" HorizontalAlignment="Left" Margin="2,50,0,35" Width="16" RenderTransformOrigin="0.333,0.483" Grid.RowSpan="2"/>
+            <TextBlock x:Name="textBlock_Copy" Margin="18,5,2.125,20" TextWrapping="Wrap" Text="Pakeisti" FontSize="10.667" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</UserControl>

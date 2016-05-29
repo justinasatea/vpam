@@ -1,0 +1,103 @@
+﻿<Window x:Class="VPAM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VPAM"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" ResizeMode="CanMinimize">
+    <Grid Width="800" Height="600" Background="#FF591E23">
+        <TabControl x:Name="tabControl" Margin="20.417,62.52,0,145" Width="114.041" HorizontalAlignment="Left" Panel.ZIndex="1">
+            <TabItem Header="Programos eiga">
+                <Grid Background="#FFD94E67" Margin="0,0,0,2.04">
+                    <Label x:Name="salyga" Content="SĄLYGA JEIGU" Height="60" Margin="0,12.6,0,0" VerticalAlignment="Top" MouseMove="IF_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/IFsalyga.png"/>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="for" Content="KARTOTI X KARTŲ" Height="60" Margin="0,87.6,0,0" VerticalAlignment="Top" MouseMove="FOR_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/CiklasFOR.png"/>
+                        </Label.Background>
+                    </Label>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Kintamieji" Background="#FFE5E5E5">
+                <Grid Background="#FFF2D84D" Margin="0,0,0,2.04">
+                    <Label x:Name="kintKurimas" Content="SUKURTI NAUJĄ" Height="60" Margin="0,12.6,0,0" VerticalAlignment="Top" MouseMove="NKINT_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/KINTKURIMAS.png"/>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="KintVeiksmai" Content="DIDINTI/MAŽINTI" Height="60" Margin="0,87.6,0,0" VerticalAlignment="Top" MouseMove="KINTV_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/PADIDINTIKINT.png"/>
+                        </Label.Background>
+                    </Label>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Mikrovaldikliui">
+                <Grid Background="#FF4D6BF2" Margin="0,0,0,2.04">
+                    <Label x:Name="setPORT" Content=" ĮJUNGTI/IŠJUNGTI" Height="60" Margin="0,12.6,0,0" VerticalAlignment="Top" MouseMove="SETPORT_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/SETPORT.png"/>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="pertrauktis" Content="PERTRAUKTIS" Height="60" Margin="0,87.6,0,0" VerticalAlignment="Top" MouseMove="PERTRAUKTIS_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/PERTRAUKTIS.png"/>
+                        </Label.Background>
+                    </Label>
+                    <Label x:Name="delay" Content="LAIKINAI LAUKTI" Height="60" Margin="0,162.6,0,0" VerticalAlignment="Top" MouseMove="DELAY_MouseMove">
+                        <Label.Background>
+                            <ImageBrush ImageSource="Icons/DELAY.png"/>
+                        </Label.Background>
+                    </Label>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBox x:Name="kodasC" Panel.ZIndex="1" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Right" Margin="0,62.52,21.814,187.165" Text="Objektai bus išversti į programą, kai paspausite atnaujinti" Width="262.094" Background="White" MaxLength="1000" AcceptsReturn="True"/>
+        <Rectangle Fill="#FF73503C" Panel.ZIndex="0" Margin="0,22.52,20,133.48" RadiusY="22" RadiusX="22" Stroke="Black" HorizontalAlignment="Right" Width="267"/>
+        <Label x:Name="label" Content="PROGRAMOS TEKSTAS" HorizontalAlignment="Right" Height="30" Margin="0,27.52,85,0" VerticalAlignment="Top" Width="145"/>
+        <Rectangle Fill="#FF73503C" Panel.ZIndex="0" Margin="147,20.52,290,133.48" RadiusY="22" RadiusX="22" Stroke="Black"/>
+        <Label x:Name="label_Copy" Content="PROGRAMOS KONSTRUKTORIUS" Height="30" Margin="225,27.52,345,0" VerticalAlignment="Top"/>
+        <ScrollViewer Margin="153,62.52,292,187.165" HorizontalScrollBarVisibility="Visible">
+            <Grid x:Name="Gridas" Panel.ZIndex="1" Background="#FFA68572" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                </Grid.RowDefinitions>
+                <Grid.LayoutTransform>
+                    <ScaleTransform 
+        				ScaleX="{Binding Value, ElementName=slider}"
+        				ScaleY="{Binding Value, ElementName=slider}" />
+                </Grid.LayoutTransform>
+            </Grid>
+        </ScrollViewer>
+        <Button x:Name="atstatyti" Content="Išvalyti" Click="atstatyti_Click" HorizontalAlignment="Left" Height="29" Margin="160,0,0,143.48" VerticalAlignment="Bottom" Width="95" Background="#FFD87070"/>
+        <Rectangle Fill="#FF73503C" Panel.ZIndex="0" Margin="10,0,21.814,59" RadiusY="22" RadiusX="22" Stroke="Black" Height="71" VerticalAlignment="Bottom"/>
+        <Button x:Name="kelti" IsEnabled="False" Content="Kelti į mikrovaldiklį" HorizontalAlignment="Left" Height="31" Margin="50,0,0,80" VerticalAlignment="Bottom" Width="140" Click="kelti_Click"/>
+        <Slider x:Name="slider" Height="14" Minimum="0.40" Maximum="2" Value="1" Margin="275,0,320,153.48" VerticalAlignment="Bottom"/>
+        <Button x:Name="atnaujinimas" Click="kodasC_Click" Content="Atnaujinti tekstą" HorizontalAlignment="Right" Height="29" Margin="0,0,85,145" VerticalAlignment="Bottom" Width="135"/>
+        <CheckBox x:Name="kitasLizdas" Content="Bandyti kitą USB lizdą:" Height="17" Margin="0,0,187,89" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" Checked="checkBox_Checked" Unchecked="kitaLizdas_Unchecked"/>
+        <ComboBox x:Name="kitasCOM" HorizontalAlignment="Right" Height="24" Margin="0,0,187,65" VerticalAlignment="Bottom" Width="145" IsEnabled="False" SelectionChanged="kitasCOM_SelectionChanged">
+            <ComboBoxItem>COM1</ComboBoxItem>
+            <ComboBoxItem>COM2</ComboBoxItem>
+            <ComboBoxItem>COM3</ComboBoxItem>
+            <ComboBoxItem>COM4</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">COM5</ComboBoxItem>
+            <ComboBoxItem>COM6</ComboBoxItem>
+            <ComboBoxItem>COM7</ComboBoxItem>
+            <ComboBoxItem>COM8</ComboBoxItem>
+            <ComboBoxItem>COM9</ComboBoxItem>
+
+        </ComboBox>
+        <CheckBox x:Name="isvaduItampa" Content="Prijungti teigiamos įtampos&#xD;&#xA; šaltinį įvesties išvadams" Height="31" Margin="0,0,373,75" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="167"/>
+        <CheckBox x:Name="kitaLizdas_sav" Content="Įvesti žinomą USB lizdą:" Height="17" Margin="0,0,29,89" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="145" Checked="kitaLizdas_sav_Checked"/>
+        <TextBox x:Name="lizdas" IsEnabled="false" HorizontalAlignment="Left" Height="23" Margin="626,511,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>

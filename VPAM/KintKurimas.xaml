@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="VPAM.KintKurimas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VPAM"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid>
+    <Grid  Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100">
+         <Rectangle x:Name="info" Fill="#FFCFDF07" Stroke="Black" RadiusY="14.5" RadiusX="14.5"/>
+        <Label x:Name="etikete" Content="......" Margin="0,10,10,0" Background="#FF0E0000" Foreground="#FFBFF702" HorizontalAlignment="Right" Width="80" RenderTransformOrigin="0.473,0.2" Height="25" VerticalAlignment="Top"/>
+        <Button x:Name="patvirtinti" Content="Patvirtinti" Margin="22,0,23,5" Click="patvirtinti_Click" FontSize="9.333" Height="15" VerticalAlignment="Bottom" IsEnabled="False"/>
+        <TextBox x:Name="mvardas"  Margin="10,40,10,42.75" TextWrapping="Wrap" Text="Vardas" TextChanged="mvardas_TextChanged"/>
+        <TextBox x:Name="reiksme" IsEnabled="False" Margin="10,0,10,22.75" TextWrapping="Wrap" Text="Reikšmė" TextChanged="reiksme_TextChanged" Height="17.25" VerticalAlignment="Bottom"/>
+    </Grid>
+    </Grid>
+</UserControl>

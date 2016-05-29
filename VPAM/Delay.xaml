@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="VPAM.Delay"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VPAM"
+             mc:Ignorable="d" Width="100" Height="100"
+            >
+    <Grid>
+        <Rectangle Fill="#FF11ADBD" Width="99" Stroke="Black" RenderTransformOrigin="0.5,0.5" RadiusY="14.5" RadiusX="14.5" Margin="0,0,1,0"/>
+        <Grid Height="99" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="57*"/>
+                <RowDefinition Height="43*"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="labelis" Content="...." Margin="0,7.48,10,19.5" Background="#FF0E0000" Foreground="#FFBFF702" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80"/>
+            <RadioButton x:Name="mms" Content="mms" HorizontalAlignment="Left" Margin="10,4,0,0" Width="15" RenderTransformOrigin="0.333,0.483" Height="15" Grid.Row="1" VerticalAlignment="Top"/>
+            <RadioButton x:Name="s" Content="s" HorizontalAlignment="Right" Height="15" Margin="0,4,16,0" VerticalAlignment="Top" Width="14" Grid.Row="1" RenderTransformOrigin="0.6,0.5"/>
+            <Button x:Name="button1" Content="Patvirtinti" Margin="10,18,10,5" Grid.Row="1" Click="button1_Click"/>
+            <RadioButton x:Name="ms" IsChecked="True" Content="ms" Height="15" Margin="39,4,47,0" VerticalAlignment="Top" Grid.Row="1"/>
+            <TextBox x:Name="textBox1"  Margin="10,0,10,-2.75" TextChanged="textBox1_TextChanged" TextWrapping="Wrap" Text="Įveskite laiką" Height="17.25" VerticalAlignment="Bottom"/>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" HorizontalAlignment="Right" Width="16" Height="15" Grid.Row="1" VerticalAlignment="Top" Margin="0,2,3,0"><Run Text=" s"/><Run Text=" "/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy2" Height="15" Margin="0,2,30,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" HorizontalAlignment="Right" Width="17"><Run Text="ms"/><Run Text="s"/></TextBlock>
+            <TextBlock x:Name="textBlock_Copy3" Height="15" Margin="25,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="17" Text="μs" Grid.Row="1"/>
+        </Grid>
+    </Grid>
+</UserControl>
